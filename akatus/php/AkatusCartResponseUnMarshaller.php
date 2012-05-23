@@ -3,6 +3,10 @@
  * Pacote de integração com a API da Akatus
  * @package akatus\php
  */
+namespace akatus\php;
+
+use \DOMDocument;
+use \UnexpectedValueException;
 
 /**
  * Deserialização da resposta XML da integração com a API da Akatus

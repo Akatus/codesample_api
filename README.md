@@ -3,11 +3,16 @@ connect
 
 Repositório de bibliotecas para integração com a API Akatus
 
-Exemplo de uso em PHP
-=====================
+Exemplo de uso em PHP 5.3+
+==========================
 
 	<?php
-	require 'akatus/php/config.php';
+	require 'connect.akatus.phar';
+
+	use akatus\php\AkatusCartApi;
+	use akatus\php\Buyer;
+	use akatus\php\Cart;
+	use akatus\php\Receiver;
 
 	$receiver = new Receiver ( 'XXX', 'user@domain.com' );
 

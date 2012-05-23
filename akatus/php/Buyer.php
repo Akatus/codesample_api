@@ -3,6 +3,9 @@
  * Pacote de integração com a API da Akatus
  * @package akatus\php
  */
+namespace akatus\php;
+
+use \ArrayIterator;
 
 /**
  * Representação do comprador na API da Akatus

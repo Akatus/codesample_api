@@ -3,6 +3,9 @@
  * Pacote de integração com a API da Akatus
  * @package akatus\php
  */
+namespace akatus\php;
+
+use \DOMDocument;
 
 /**
  * Serialização do carrinho para XML para integração com a API da Akatus
