@@ -3,6 +3,11 @@
  * Pacote de integração com a API da Akatus
  * @package akatus\php
  */
+namespace akatus\php;
+
+use \ArrayIterator;
+use \Countable;
+use \IteratorAggregate;
 
 /**
  * Representação do carrinho na integração com a API da Akatus

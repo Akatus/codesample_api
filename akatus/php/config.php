@@ -3,6 +3,7 @@
  * Pacote de integração com a API da Akatus
  * @package akatus\php
  */
+namespace akatus\php;
 
 //configuração do include_path
 ini_set('include_path', implode(PATH_SEPARATOR, array_unique(
@@ -12,13 +13,9 @@ ini_set('include_path', implode(PATH_SEPARATOR, array_unique(
 	)
 )));
 
-/**
- * Função para carregamento automático das classes de integração.
- * @param string $class Nome da classe
- */
-function akatus__autoload($class) {
-	require 'akatus/php/'.basename($class).'.php';
-}
-
 //registra a função autoload
-spl_autoload_register('akatus__autoload',true);
+spl_autoload_register(function($class) {
+	$classPath = implode(DIRECTORY_SEPARATOR,explode('\\',$class)).'.php';
+	
+	require $classPath;
+},true);

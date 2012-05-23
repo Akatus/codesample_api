@@ -3,6 +3,7 @@
  * Pacote de integração com a API da Akatus
  * @package akatus\php
  */
+namespace akatus\php;
 
 /**
  * Representação de uma transação na API da Akatus
