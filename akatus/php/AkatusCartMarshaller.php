@@ -161,7 +161,7 @@ class AkatusCartMarshaller {
 			$dom->createElement('peso_total', $transaction->getWeight())
 		);
 		$transactionElement->appendChild(
-			$dom->createElement('frete_total', $transaction->getShipping())
+			$dom->createElement('frete', $transaction->getShipping())
 		);
 		$transactionElement->appendChild(
 			$dom->createElement('moeda', $transaction->getCurrency())
