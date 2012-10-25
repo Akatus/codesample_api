@@ -13,33 +13,33 @@ class Cart implements Countable, IteratorAggregate {
 	 * @var	Buyer
 	 */
 	private $buyer;
-	
+
 	/**
 	 * @var	array[Product]
 	 */
 	private $products;
-	
+
 	/**
 	 * @var	Receiver
 	 */
 	private $receiver;
-	
+
 	/**
 	 * @var	Transaction
 	 */
 	private $transaction;
-	
+
 	/**
 	 * @param	Buyer $buyer
 	 * @param	Receiver $receiver
 	 */
 	public function __construct( Buyer $buyer, Receiver $receiver ) {
 		$this->buyer = $buyer;
-		$this->products = array();	
+		$this->products = array();
 		$this->receiver = $receiver;
 		$this->transaction = new Transaction();
 	}
-	
+
 	/**
 	 * Adiciona um novo produto ao carrinho.
 	 * @param string $description
@@ -60,12 +60,12 @@ class Cart implements Countable, IteratorAggregate {
 		$product = new Product($description, $price, $weight,$quantity);
 		$product->setDiscount((float) $discount);
 		$product->setShipping((float) $shipping);
-		
+
 		$this->addProduct($product);
-		
+
 		return $product;
 	}
-	
+
 	/**
 	 * @param Product $product
 	 */
@@ -74,24 +74,24 @@ class Cart implements Countable, IteratorAggregate {
 		$this->transaction->setDiscount(
 			$this->transaction->getDiscount() + $product->getDiscount()
 		);
-		
+
 		$this->transaction->setShipping(
 			$this->transaction->getShipping() + $product->getShipping()
 		);
-		
+
 		$this->transaction->setWeight(
 			$this->transaction->getWeight() +
 			($product->getWeight() * $product->getQuantity())
 		);
 	}
-	
+
 	/* (non-PHPdoc)
 	 * @see Countable::count()
 	 */
 	public function count() {
 		return count( $this->products );
 	}
-	
+
 	/**
 	 * @return Buyer
 	 */
@@ -105,7 +105,7 @@ class Cart implements Countable, IteratorAggregate {
 	public function getIterator() {
 		return new ArrayIterator( $this->products );
 	}
-	
+
 	/**
 	 * @return Receiver
 	 */
@@ -118,5 +118,12 @@ class Cart implements Countable, IteratorAggregate {
 	 */
 	public function getTransaction() {
 		return $this->transaction;
+	}
+
+	/**
+	 * @param Transaction $transaction
+	 */
+	public function setTransaction(Transaction $transaction) {
+	    $this->transaction = $transaction;
 	}
 }

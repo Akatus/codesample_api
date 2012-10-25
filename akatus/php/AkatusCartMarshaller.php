@@ -155,10 +155,10 @@ class AkatusCartMarshaller {
 		$transaction = $cart->getTransaction();
 		$transactionElement = $dom->createElement('transacao');
 		$transactionElement->appendChild(
-			$dom->createElement('desconto_total', $transaction->getDiscount())
+			$dom->createElement('desconto', $transaction->getDiscount())
 		);
 		$transactionElement->appendChild(
-			$dom->createElement('peso_total', $transaction->getWeight())
+			$dom->createElement('peso', $transaction->getWeight())
 		);
 		$transactionElement->appendChild(
 			$dom->createElement('frete', $transaction->getShipping())
