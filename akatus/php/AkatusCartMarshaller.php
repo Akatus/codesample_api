@@ -136,16 +136,16 @@ class AkatusCartMarshaller {
 			$dom->createElement('quantidade', $product->getQuantity())
 		);
 		$productElement->appendChild(
-			$dom->createElement('preco', $product->getPrice())
+			$dom->createElement('preco', number_format($product->getPrice(), 2, '', ''))
 		);
 		$productElement->appendChild(
-			$dom->createElement('peso', $product->getWeight())
+			$dom->createElement('peso', number_format($product->getWeight(), 2, '', ''))
 		);
 		$productElement->appendChild(
-			$dom->createElement('frete', $product->getShipping())
+			$dom->createElement('frete', number_format($product->getShipping(), 2, '', ''))
 		);
 		$productElement->appendChild(
-			$dom->createElement('desconto', $product->getDiscount())
+			$dom->createElement('desconto', number_format($product->getDiscount(), 2, '', ''))
 		);
 		
 		return $productElement;

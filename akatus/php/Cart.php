@@ -71,18 +71,6 @@ class Cart implements Countable, IteratorAggregate {
 	 */
 	public function addProduct( Product $product ) {
 		$this->products[] = $product;
-		$this->transaction->setDiscount(
-			$this->transaction->getDiscount() + $product->getDiscount()
-		);
-
-		$this->transaction->setShipping(
-			$this->transaction->getShipping() + $product->getShipping()
-		);
-
-		$this->transaction->setWeight(
-			$this->transaction->getWeight() +
-			($product->getWeight() * $product->getQuantity())
-		);
 	}
 
 	/* (non-PHPdoc)
