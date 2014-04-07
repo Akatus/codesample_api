@@ -12,7 +12,7 @@ $buyer->addNewPhone('residencial', '1699999999');
 //endereço do comprador
 $address = $buyer->createAddress('entrega');
 $address->setCity('Cidade');
-$address->setCountry('Brasil');
+$address->setCountry('BRA');
 $address->setNeighborhood('Bairro');
 $address->setNumber(0);
 $address->setState('estado');
