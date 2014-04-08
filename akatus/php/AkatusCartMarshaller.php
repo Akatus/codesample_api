@@ -173,6 +173,18 @@ class AkatusCartMarshaller {
 			$dom->createElement('meio_de_pagamento', $transaction->getPaymentMethod())
 		);
 		
+		if($transaction->getFingerprintAkatus()) {
+			$transactionElement->appendChild(
+				$dom->createElement('fingerprint_akatus', $transaction->getFingerprintAkatus())
+			);
+			$transactionElement->appendChild(
+				$dom->createElement('fingerprint_partner_id', $transaction->getFingerprintPartnerId())
+			);
+			$transactionElement->appendChild(
+				$dom->createElement('ip', $transaction->getIp())
+			);
+		}
+		
 		return $transactionElement;
 	}
 }
