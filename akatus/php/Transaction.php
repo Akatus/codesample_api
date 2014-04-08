@@ -7,6 +7,7 @@
 /**
  * Representação de uma transação na API da Akatus
  * @author	João Batista Neto &lt;neto.joaobatista@gmail.com.br&gt;
+ * @author	Valdirene da Cruz Neves Júnior &lt;vaneves@vaneves.com&gt;
  */
 class Transaction {
 	/**
@@ -52,6 +53,21 @@ class Transaction {
 	private $weight = 0;
 	
 	/**
+	 * @var string
+	 */
+	private $fingerprintAkatus;
+	
+	/**
+	 * @var string
+	 */
+	private $fingerprintPartnerId;
+	
+	/**
+	 * @var string
+	 */
+	private $ip;
+	
+	/**
 	 * @return string
 	 */
 	public function getCurrency() {
@@ -91,6 +107,27 @@ class Transaction {
 	 */
 	public function getWeight() {
 		return $this->weight;
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getFingerprintAkatus() {
+		return $this->fingerprintAkatus;
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getFingerprintPartnerId() {
+		return $this->fingerprintPartnerId;
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getIp() {
+		return $this->ip;
 	}
 
 	/**
@@ -133,5 +170,26 @@ class Transaction {
 	 */
 	public function setWeight($weight) {
 		$this->weight = $weight;
+	}
+	
+	/**
+	 * @param string $fingerprintAkatus
+	 */
+	public function setFingerprintAkatus($fingerprintAkatus) {
+		$this->fingerprintAkatus = $fingerprintAkatus;
+	}
+	
+	/**
+	 * @param string $fingerprintPartnerId
+	 */
+	public function setFingerprintPartnerId($fingerprintPartnerId) {
+		$this->fingerprintPartnerId = $fingerprintPartnerId;
+	}
+	
+	/**
+	 * @param string $fingerprintPartnerId
+	 */
+	public function setIp($ip) {
+		$this->ip = $ip;
 	}
 }
