@@ -45,7 +45,7 @@ try {
     $akatusCartApi = new AkatusCartApi(new AkatusCartWithCardMarshaller());
 
     //o método test() indica que estamos usando o ambiente de testes,
-    //para usar o ambiente de produção, basta não suar o método test.
+    //para usar o ambiente de produção, basta não usar o método test.
     var_dump($akatusCartApi->test()->execute($cart));
 } catch (RuntimeException $e) {
     //opz, alguma coisa saiu errada.
